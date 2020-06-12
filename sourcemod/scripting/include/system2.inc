@@ -359,6 +359,7 @@ public Extension __ext_system2 =
     public void __ext_system2_SetNTVOptional()
     {
         MarkNativeAsOptional("System2Request.SetURL");
+        MarkNativeAsOptional("System2Request.SetURLFormat");
         MarkNativeAsOptional("System2Request.GetURL");
         MarkNativeAsOptional("System2Request.SetPort");
         MarkNativeAsOptional("System2Request.GetPort");

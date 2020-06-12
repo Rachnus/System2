@@ -28,8 +28,24 @@
 #include "RequestHandler.h"
 #include "HTTPRequestThread.h"
 
+cell_t NativeRequest_SetURL(IPluginContext* pContext, const cell_t* params) {
+    Request* request = Request::ConvertRequest<Request>(params[1], pContext);
+    if (request == NULL) {
+        return 0;
+    }
 
-cell_t NativeRequest_SetURL(IPluginContext *pContext, const cell_t *params) {
+    /*
+    char url[1024];
+    smutils->FormatString(url, sizeof(url), pContext, params, 2);*/
+
+    char* url;
+    pContext->LocalToString(params[2], &url);
+
+    request->url = url;
+    return 1;
+}
+
+cell_t NativeRequest_SetURLFormat(IPluginContext *pContext, const cell_t *params) {
     Request *request = Request::ConvertRequest<Request>(params[1], pContext);
     if (request == NULL) {
         return 0;

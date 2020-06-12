@@ -151,6 +151,23 @@ typeset System2FTPProgressCallback
  */
 methodmap System2Request < Handle {
     /**
+     * Sets the URL of the request. (Raw)
+     * Query parameters have to be given directly in the URL.
+     *
+     * Host is a hostname or dotted numerical IP address. A numerical IPv6 address must be written within [brackets].
+     *
+     * If the given URL is missing a scheme name (such as "http://" or "ftp://" etc)
+     * then system2 will make a guess based on the host.
+     *
+     * @param url       URL to use for the request.
+     * @param ...       URL format arguments.
+     *
+     * @noreturn
+     * @error           Invalid request.
+     */
+    public native void SetURL(const char[] url);
+    
+    /**
      * Sets the URL of the request.
      * Query parameters have to be given directly in the URL.
      *
@@ -168,7 +185,7 @@ methodmap System2Request < Handle {
      * @noreturn
      * @error           Invalid request.
      */
-    public native void SetURL(const char[] url, any ...);
+    public native void SetURLFormat(const char[] url, any ...);
 
     /**
      * Retrieves the URL of the request.

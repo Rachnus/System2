@@ -28,6 +28,7 @@
 #include "extension.h"
 
 cell_t NativeRequest_SetURL(IPluginContext *pContext, const cell_t *params);
+cell_t NativeRequest_SetURLFormat(IPluginContext* pContext, const cell_t* params);
 cell_t NativeRequest_GetURL(IPluginContext *pContext, const cell_t *params);
 cell_t NativeRequest_SetPort(IPluginContext *pContext, const cell_t *params);
 cell_t NativeRequest_GetPort(IPluginContext *pContext, const cell_t *params);
@@ -121,6 +122,7 @@ cell_t NativeGetFileCRC32(IPluginContext *pContext, const cell_t *params);
 const sp_nativeinfo_t system2_natives[] =
 {
     { "System2Request.SetURL", NativeRequest_SetURL },
+    { "System2Request.SetURLFormat", NativeRequest_SetURLFormat },
     { "System2Request.GetURL", NativeRequest_GetURL },
     { "System2Request.SetPort", NativeRequest_SetPort },
     { "System2Request.GetPort", NativeRequest_GetPort },
